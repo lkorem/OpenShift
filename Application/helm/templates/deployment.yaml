@@ -9,7 +9,7 @@ spec:
       app: {{ .Release.Name }}
   template:
     metadata: 
-      labels: {{ .Release.Name }}
+      labels: 
         app: {{ .Release.Name }}
     spec:
       containers:
