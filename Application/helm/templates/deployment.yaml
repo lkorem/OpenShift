@@ -8,12 +8,12 @@ spec:
   selector:
     matchLabels: {{ .Release.Name }}
 # set your lab user name
-      app: user15-hello-world
+      app: {{ .Release.Name }}
   template:
     metadata: {{ .Release.Name }}
       labels: {{ .Release.Name }}
 # set your lab user name
-        app: user15-hello-world
+        app: {{ .Release.Name }}
     spec:
       containers:
         - resources: {}
