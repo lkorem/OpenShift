@@ -1,0 +1,35 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+# set your lab user name
+  name: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.ReplicaNumber }}3
+  selector:
+    matchLabels: {{ .Release.Name }}
+# set your lab user name
+      app: user15-hello-world
+  template:
+    metadata: {{ .Release.Name }}
+      labels: {{ .Release.Name }}
+# set your lab user name
+        app: user15-hello-world
+    spec:
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: hello-world
+          ports:
+            - containerPort: {{ .Values.containers.containerPort }}
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+# update with the image you build in part 1
+          image: 'quay.io/levi_korem/levi_lab1_img:v4'{{ .Values.containers.image }}:{{ .Values.containers.tag }}
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
