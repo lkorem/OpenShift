@@ -4,7 +4,7 @@ metadata:
   name: index.html
 immutable: false
 data:
-  index.html: |-
+  index.html: 
     <html>
     <head>
       <title>HELM Application</title>
