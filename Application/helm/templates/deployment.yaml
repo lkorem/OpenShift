@@ -12,7 +12,7 @@ spec:
       labels: 
         app: {{ .Release.Name }}
     spec:
-      volumes:
+#      volumes:
 #       - name: index-html
 #         configMap:
 #           name: index.html
