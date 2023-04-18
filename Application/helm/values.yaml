@@ -3,7 +3,7 @@ ReplicaNumber: 3
 containers:
   containerPort: 8080
   image: 'quay.io/levi_korem/levi_lab1_img:v4'
-  tag: 'v4'
+  tag: ''
 
 service:
   servicePort: 8080
