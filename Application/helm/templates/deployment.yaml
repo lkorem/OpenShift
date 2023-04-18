@@ -21,7 +21,7 @@ spec:
        containers:
         volumeMounts:
          - name: index.html
-           mountPath: /tmp/html # this will mount the html.index file to it application location
+           mountPath: /src/html # this will mount the html.index file to it application location
 
         resources: {}
           terminationMessagePath: /dev/termination-log
